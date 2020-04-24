@@ -1,0 +1,127 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	background: url(../img/bg2.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center left; 
+	overflow: hidden;
+}
+.container{
+	width: 30%;
+	height: 600px;
+	background-color: #434656;
+	border-radius: 12px;
+	position: relative;
+	top: 50%;
+	left: 58%;
+	transform: translateY(-50%);
+}
+.form{
+	width: 80%;
+	height: 300px;
+	position: absolute;
+	top: 60%;
+	left: 0%;
+	transform: translateY(-50%);
+	text-transform: uppercase;
+	color: #A7AABC;
+}
+
+.form-item{
+	width: 100%;
+	height: 100px;
+}
+.form-uname.active input,
+.form-pwd.active input{
+	animation: inputFocus 1s forwards;
+}
+.form-uname.active label,
+.form-pwd.active label{
+	animation: labelMove 0.5s forwards;
+	animation-delay: 0.1s;
+}
+.form-item label{
+	display: block;
+	transform: translateY(30px);
+}
+.form-item input{
+	width: 100%;
+	height: 30px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: #A7AABC;
+	border-bottom: 2px solid #A7AABC;
+}
+.form-item input:focus{
+	border-bottom-color: #47c0a2;
+	transition: border-bottom-color;
+}
+.login-btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	background-color: #7b7cd7;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: #fff;
+}
+.form-input-contain.active{
+	opacity: 0;
+	transition: opacity 0.8s;
+}
+.login-btn.active{
+	animation: buttonClicke1 0.5s linear 0s forwards,buttonClicke2 1s linear 0.5s forwards; 
+}
+
+h2{
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0;
+}
+h2.active{
+	animation: success 1s linear forwards 1.5s;
+}
+@keyframes success{
+	to{opacity: 1;}
+}
+
+@keyframes inputFocus{
+	10%{
+		height: 30px;
+	}
+	40%{
+		border-bottom-left-radius: 30px;
+	}
+	100%{
+		border-bottom-left-radius: 0px;
+	}
+}
+@keyframes labelMove{
+	to{
+		transform: translateY(0);
+	}
+}
+@keyframes buttonClicke1{
+	to{
+		text-indent: 0;
+		height: 5px;
+	}
+}
+@keyframes buttonClicke2{
+	to{
+		width: 0px;
+	}
+}

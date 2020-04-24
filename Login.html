@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/Login.css"/>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<div class="form">
+				<div class="form-input-contain" :class="isClicked.isLoginClicked?'active':''" >
+					<div class="form-item form-uname" :class="isClicked.isUnameClicked?'active':''">
+						<label @click.self="getUname()">username</label>
+						<input type="text" v-model="formData.username" ref="uname" />
+					</div>
+					<div class="form-item form-pwd" :class="isClicked.isPwdClicked?'active':''">
+						<label @click.self="getPwd()">password</label>
+						<input type="password" v-model="formData.password" ref="pwd" />
+					</div>
+				</div>
+				<button type="button"
+						class="login-btn" 
+						:class="isClicked.isLoginClicked?'active':''"  
+						@click.self="submit"
+						ref="loginBtn"
+				>login</button>
+			</div>
+			<h2 :class="isClicked.isLoginClicked?'active':''"  >
+				登录成功，将要跳转页面
+			</h2>
+		</div>
+		<script src="js/Login.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
